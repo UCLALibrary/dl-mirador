@@ -9,7 +9,7 @@ Clone https://github.com/UCLALibrary/dl-mirador
 1. Run `$ npm install` from a terminal to install dependencies
 1. Run `$ npm start` to start a development server and build a development version of your Mirador installation.
 1. The browser should open a page that when eventually built you will see a Mirador viewer load at `http://localhost:8080`
-1. Pass the manifest using parameter `manifest=` like ?manifest=https://gallica.bnf.fr/iiif/ark:/12148/btv1b525002505/manifest.json
+1. To see the viewer, pass the manifest using parameter `manifest=` like ?manifest=https://gallica.bnf.fr/iiif/ark:/12148/btv1b525002505/manifest.json
 
 ## npm script commands available
 
