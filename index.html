@@ -5,6 +5,11 @@
   </head>
   <body>
     <div id="mirador-viewer"></div>
-    <script src="/dist/mirador3.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mirador@3.2.0/dist/mirador.min.js"></script>
+    <script type="text/javascript">
+      var mirador = Mirador.viewer({
+        "id": "mirador-viewer"
+      });
+    </script>
   </body>
 </html>
