@@ -2,26 +2,32 @@ import Mirador from 'mirador/dist/es/src/index';
 import miradorImageToolsPlugin from 'mirador-image-tools/es/plugins/miradorImageToolsPlugin';
 
 let params = new URL(document.location).searchParams;
+console.log(params)
 let  encodedArk;
 let manifestURL
 let initializedManifest = params.get('manifest');
-let splitURL = initializedManifest.split("ark:");
-if(splitURL.length > 1){
-  encodedArk = "ark:" + splitURL[1].substring(0,splitURL[1].lastIndexOf("/")).replaceAll("/","%2F");
-  console.log("Ark ENCODED "+encodedArk);
-  manifestURL = splitURL[0] + encodedArk + splitURL[1].substring(splitURL[1].lastIndexOf("/"));
-  console.log("URL ENCODED "+manifestURL);
-} else {
-  manifestURL = initializedManifest;
-  console.log("URL ENCODED "+manifestURL);
+if (initializedManifest) {
+  let splitURL = initializedManifest.split("ark:");
+  if(splitURL.length > 1){
+    encodedArk = "ark:" + splitURL[1].substring(0,splitURL[1].lastIndexOf("/")).replaceAll("/","%2F");
+    console.log("Ark ENCODED "+encodedArk);
+    manifestURL = splitURL[0] + encodedArk + splitURL[1].substring(splitURL[1].lastIndexOf("/"));
+    console.log("URL ENCODED "+manifestURL);
+  } else {
+    manifestURL = initializedManifest;
+    console.log("URL ENCODED "+manifestURL);
+  }
 }
 
 const config = {
   id: 'mirador-viewer',
-  windows: [{
-    imageToolsEnabled: true,
-    manifestId: manifestURL,
-  }],
+
+    windows: [
+      {
+        imageToolsEnabled: true,
+        manifestId: manifestURL,
+      }
+    ],
   catalog: [
     { manifestId: 'https://iiif.library.ucla.edu/ark%3A%2F21198%2Fz1dr49h5/manifest?_ga=2.7592304.311075434.1655140054-1414255438.1650661792', provider: "Wahon Literacies Collection, UCLA Library Digital Collections"},
     { manifestId: 'https://digital.blb-karlsruhe.de/i3f/v20/4590945/manifest', provider: "St. Gall Collection, UCLA Library Digital Collections (via Badische Landesbibliothek Karlsruhe)"},
