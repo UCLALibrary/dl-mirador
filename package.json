@@ -8,11 +8,12 @@
     "url": "https://github.com/UCLALibrary/dlmirador"
   },
   "scripts": {
-    "server": "node_modules/.bin/http-server --cors -o / -c-1",
+    "clean": "rm -rf ./dist",
+    "server": "node_modules/.bin/http-server --cors -o /demo/portal -c-1",
     "serve": "npm run server -- -p 5555",
-    "build": "NODE_ENV=production webpack --env=production",
-    "start": "NODE_ENV=development webpack serve",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "webpack": "webpack --config webpack.config.js",
+    "build": "NODE_ENV=production webpack --mode=production",
+    "start": "NODE_ENV=development webpack-dev-server --open"
   },
   "dependencies": {
     "mirador": "^3.1.0",
