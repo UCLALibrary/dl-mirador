@@ -1,5 +1,4 @@
 node_modules/
 *.log
 .cache/
-dist/
 package-lock.json
