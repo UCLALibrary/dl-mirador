@@ -1,5 +1,5 @@
 ---
-name: run-build-test
+name: install-build-deploy
 
 on:
   pull_request:
