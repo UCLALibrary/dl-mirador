@@ -2,7 +2,6 @@ import Mirador from 'mirador/dist/es/src/index';
 import miradorImageToolsPlugin from 'mirador-image-tools/es/plugins/miradorImageToolsPlugin';
 
 let params = new URL(document.location).searchParams;
-console.log(params)
 let  encodedArk;
 let manifestURL
 let initializedManifest = params.get('manifest');
