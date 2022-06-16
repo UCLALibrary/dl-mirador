@@ -33,8 +33,9 @@ jobs:
         if: github.event_name == 'pull_request'
 
       - name: Copy dist assets to deploy source dir
-        run: mv dist deploy-files/
-        run: cp index.html deploy-files/
+        run: |
+          mv dist deploy-files/
+          cp index.html deploy-files/
         if: github.event_name != 'pull_request'
         
       - name: Deploy code to s3 bucket
