@@ -33,6 +33,7 @@ jobs:
         run: |
           mv dist deploy-files/
           cp index.html deploy-files/
+          ls -la
           ls -la deploy-files
           ls -la dist
 
