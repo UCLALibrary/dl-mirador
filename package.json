@@ -9,7 +9,7 @@
   },
   "scripts": {
     "clean": "rm -rf ./dist",
-    "server": "node_modules/.bin/http-server --cors -o /demo/portal -c-1",
+    "server": "node_modules/.bin/http-server --cors -o index.html -c-1",
     "serve": "npm run server -- -p 5555",
     "webpack": "webpack --config webpack.config.js",
     "build": "NODE_ENV=production webpack --mode=production",
@@ -36,6 +36,7 @@
   },
   "peerDependencies": {
     "react": "^16.8.3",
-    "react-dom": "^16.8.3"
+    "react-dom": "^16.8.3",
+    "eslint": "^4.0.0"
   }
 }
