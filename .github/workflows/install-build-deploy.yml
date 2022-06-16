@@ -31,7 +31,8 @@ jobs:
 
       - name: Copy dist assets to deploy source dir
         run: |
-          mv dist deploy-files/
+          mkdir deploy-files
+          cp -rp dist deploy-files/
           cp index.html deploy-files/
 
       - name: Deploy code to s3 bucket
