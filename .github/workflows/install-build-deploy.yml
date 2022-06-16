@@ -33,7 +33,7 @@ jobs:
         if: github.event_name == 'pull_request'
 
       - name: Copy dist assets to deploy source dir
-        run: rsync -av dist/ deploy-files/
+        run: mv dist deploy-files/
         run: cp index.html deploy-files/
         if: github.event_name != 'pull_request'
         
