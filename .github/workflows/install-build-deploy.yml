@@ -33,9 +33,11 @@ jobs:
         if: github.event_name == 'pull_request'
 
       - name: Copy dist assets to deploy source dir
-        run: rsync -av dist/ deploy-files/
+        run: |
+          mv dist deploy-files/
+          cp index.html deploy-files/
         if: github.event_name != 'pull_request'
-
+        
       - name: Deploy code to s3 bucket
         uses: jakejarvis/s3-sync-action@7ed8b112447abb09f1da74f3466e4194fc7a6311 # Latest commit from 03-05-2020
         with:
